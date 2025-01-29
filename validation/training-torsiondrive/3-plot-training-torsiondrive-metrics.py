@@ -522,6 +522,16 @@ def _plot_projection(
     help="Use the pyplot `dark_background` style.",
 )
 @click.option(
+    "-c",
+    "--config-file",
+    type=click.Path(exists=False, dir_okay=False, file_okay=True),
+    help=(
+        "Config file of force fields to plot, "
+        "with keys of plot labels and values of filename labels."
+    ),
+    default="config-all.json"
+)
+@click.option(
     "-f",
     "--figure_width",
     type=click.FLOAT,
@@ -563,6 +573,7 @@ def _plot_projection(
 )
 def main(
     dark_background,
+    config_file,
     figure_width,
     figure_height,
     input_dir,
@@ -593,26 +604,8 @@ def main(
     with open(Path(input_dir, "torsiondrive-training-names.json"), "r") as json_file:
         dataset_names = json.load(json_file)
 
-    ff_labels = {
-        "ff14SB": "ff14sb",
-#        "ff14SB-onlysc": "ff14sbonlysc",
-#        "OpenFF-2.1.0": "Sage-2.1.0",
-#        "Sage-CC": "Sage-CC-0.0.3",
-#        "Sage-2.1.0-NAGL": "Sage-2.1.0-NAGL",
-        "Null-0.0.2": "Null-0.0.2",
-        "Null-0.0.3": "Null-0.0.3",
-#        "Null-0.0.3-DW": "Null-0.0.3-default-weights",
-        "Null-0.0.3-SP": "Null-0.0.3-abinitio",
-#        "Null-0.0.3-SP-DW": "Null-0.0.3-abinitio-default-weights",
-#        "Null-0.0.3-QAmber": "Null-0.0.3-QAmber",
-#        "Null-0.0.3-NBAmber": "Null-0.0.3-NBAmber",
-#        "Null-0.0.3-NAGL": "Null-0.0.3-NAGL",
-        "Null-0.0.3-Pair": "Null-0.0.3-Pair",
-        "Specific-0.0.2": "Specific-0.0.2",
-        "Specific-0.0.3": "Specific-0.0.3",
-        "Specific-0.0.3-Pair": "Specific-0.0.3-Pair",
-        "Specific-0.0.3-SPair": "Specific-0.0.3-Sage-Pair",
-    }
+    with open(config_file, "r") as f:
+        ff_labels = json.load(f)
 
     qc_data = dict()
     rmse_values = dict()
