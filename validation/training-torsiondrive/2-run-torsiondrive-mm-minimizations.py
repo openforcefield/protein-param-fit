@@ -20,8 +20,6 @@ from rdkit.Chem import rdMolAlign
 from rdkit.Geometry import Point3D
 from tqdm import tqdm
 
-from amberimpropertorsionhandler import AmberImproperTorsionHandler
-
 
 def _parameterize_molecule(
     mapped_smiles: str,

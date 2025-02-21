@@ -576,8 +576,8 @@ def main(
     seaborn.set_palette(
         seaborn.color_palette(
             [
-                seaborn.color_palette("colorblind")[i]
-                for i in [0, 1, 2, 4, 8, 9, 7, 5, 6, 3]
+                seaborn.color_palette("tab10")[i]
+                for i in [0, 1, 2, 4, 3, 9, 7, 5, 6, 8]
             ]
         )
     )
@@ -595,23 +595,23 @@ def main(
 
     ff_labels = {
         "ff14SB": "ff14sb",
-#        "ff14SB-onlysc": "ff14sbonlysc",
-#        "OpenFF-2.1.0": "Sage-2.1.0",
-#        "Sage-CC": "Sage-CC-0.0.3",
-#        "Sage-2.1.0-NAGL": "Sage-2.1.0-NAGL",
-        "Null-0.0.2": "Null-0.0.2",
-        "Null-0.0.3": "Null-0.0.3",
-#        "Null-0.0.3-DW": "Null-0.0.3-default-weights",
-        "Null-0.0.3-SP": "Null-0.0.3-abinitio",
-#        "Null-0.0.3-SP-DW": "Null-0.0.3-abinitio-default-weights",
-#        "Null-0.0.3-QAmber": "Null-0.0.3-QAmber",
-#        "Null-0.0.3-NBAmber": "Null-0.0.3-NBAmber",
-#        "Null-0.0.3-NAGL": "Null-0.0.3-NAGL",
-        "Null-0.0.3-Pair": "Null-0.0.3-Pair",
-        "Specific-0.0.2": "Specific-0.0.2",
-        "Specific-0.0.3": "Specific-0.0.3",
-        "Specific-0.0.3-Pair": "Specific-0.0.3-Pair",
-        "Specific-0.0.3-SPair": "Specific-0.0.3-Sage-Pair",
+        "ff14SB-onlysc": "ff14sbonlysc",
+        #"OpenFF-2.1.0": "Sage-2.1.0",
+        #"Sage-CC": "Sage-CC-0.0.3",
+        "Sage-2.1-NAGL": "Sage-2.1.0-NAGL",
+        #"Null-0.0.2": "Null-0.0.2",
+        #"Null-QM": "Null-0.0.3",
+        #"Null-0.0.3-DW": "Null-0.0.3-default-weights",
+        #"Null-0.0.3-SP": "Null-0.0.3-abinitio",
+        #"Null-0.0.3-SP-DW": "Null-0.0.3-abinitio-default-weights",
+        #"Null-0.0.3-QAmber": "Null-0.0.3-QAmber",
+        #"Null-0.0.3-NBAmber": "Null-0.0.3-NBAmber",
+        #"Null-0.0.3-NAGL": "Null-0.0.3-NAGL",
+        "Null-QM": "Null-0.0.3-Pair",
+        #"Specific-0.0.2": "Specific-0.0.2",
+        #"Specific-QM": "Specific-0.0.3",
+        #"Specific-QM-Pair": "Specific-0.0.3-Pair",
+        "Specific-QM": "Specific-0.0.3-Sage-Pair",
     }
 
     qc_data = dict()
@@ -756,7 +756,7 @@ def main(
         figure_size,
         "Capped 3-mer backbone\nRMSE (kcal mol$^{-1}$)",
         dark_background=dark_background,
-        rotate_x_labels=True,
+        #rotate_x_labels=True,
     )
 
     _plot_force_field_rmse(
@@ -773,8 +773,8 @@ def main(
     seaborn.set_palette(
         seaborn.color_palette(
             [
-                seaborn.color_palette("colorblind")[i]
-                for i in [7, 0, 1, 2, 4, 8, 9, 5, 6, 3]
+                seaborn.color_palette("tab10")[i]
+                for i in [7, 0, 1, 2, 4, 3, 9, 5, 6, 8]
                 # for i in [7, 0, 5, 1, 2, 9, 4, 8, 6, 3]
             ]
         )
