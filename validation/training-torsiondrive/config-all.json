@@ -1,0 +1,20 @@
+{
+    "ff14SB": "ff14sb",
+    "ff14SB-onlysc": "ff14sbonlysc",
+    "OpenFF-2.1.0": "Sage-2.1.0",
+    "Sage-CC": "Sage-CC-0.0.3",
+    "Sage-2.1.0-NAGL": "Sage-2.1.0-NAGL",
+    "Null-0.0.2": "Null-0.0.2",
+    "Null-0.0.3": "Null-0.0.3",
+    "Null-0.0.3-DW": "Null-0.0.3-default-weights",
+    "Null-0.0.3-SP": "Null-0.0.3-abinitio",
+    "Null-0.0.3-SP-DW": "Null-0.0.3-abinitio-default-weights",
+    "Null-0.0.3-QAmber": "Null-0.0.3-QAmber",
+    "Null-0.0.3-NBAmber": "Null-0.0.3-NBAmber",
+    "Null-0.0.3-NAGL": "Null-0.0.3-NAGL",
+    "Null-0.0.3-Pair": "Null-0.0.3-Pair",
+    "Specific-0.0.2": "Specific-0.0.2",
+    "Specific-0.0.3": "Specific-0.0.3",
+    "Specific-0.0.3-Pair": "Specific-0.0.3-Pair",
+    "Specific-0.0.3-SPair": "Specific-0.0.3-Sage-Pair"
+}
