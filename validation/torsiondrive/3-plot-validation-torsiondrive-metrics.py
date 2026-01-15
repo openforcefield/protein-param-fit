@@ -430,6 +430,7 @@ def _plot_force_field_rmse(
     pyplot.bar(
         bar_locations,
         bar_heights,
+        color=seaborn.color_palette()[:len(ff_labels)],
         width=bar_width,
         yerr=bar_confidence_intervals,
         ecolor="white" if dark_background else "black",
@@ -438,7 +439,7 @@ def _plot_force_field_rmse(
 
     x_label_rotation = 90.0 if rotate_x_labels else 0.0
     x_labels = [
-        x_label.replace("-", "\n", 1).replace("-", " ")
+        x_label.replace("-AshGC", "\nAshGC").replace("-alpha0", "\nalpha0")
         for x_label in ff_labels
     ]
 
@@ -522,6 +523,14 @@ def _plot_projection(
     help="Use the pyplot `dark_background` style.",
 )
 @click.option(
+    "-e",
+    "--extension",
+    type=click.STRING,
+    default="pdf",
+    show_default=True,
+    help="File extension for output plots.",
+)
+@click.option(
     "-f",
     "--figure_width",
     type=click.FLOAT,
@@ -563,6 +572,7 @@ def _plot_projection(
 )
 def main(
     dark_background,
+    extension,
     figure_width,
     figure_height,
     input_dir,
@@ -577,7 +587,8 @@ def main(
         seaborn.color_palette(
             [
                 seaborn.color_palette("tab10")[i]
-                for i in [0, 1, 2, 4, 3, 9, 7, 5, 6, 8]
+                #for i in [0, 1, 2, 4, 3, 9, 7, 5, 6, 8]
+                for i in [0, 9, 4, 6, 1, 8, 3, 2, 5, 7]
             ]
         )
     )
@@ -595,10 +606,12 @@ def main(
 
     ff_labels = {
         "ff14SB": "ff14sb",
-        "ff14SB-onlysc": "ff14sbonlysc",
+        "ff99SB": "ff99sb",
+        "ff19SB": "ff19sb",
+        #"ff14SB-onlysc": "ff14sbonlysc",
         #"OpenFF-2.1.0": "Sage-2.1.0",
         #"Sage-CC": "Sage-CC-0.0.3",
-        "Sage-2.1-NAGL": "Sage-2.1.0-NAGL",
+        "Sage-2.1.0-AshGC": "Sage-2.1.0-NAGL",
         #"Null-0.0.2": "Null-0.0.2",
         #"Null-QM": "Null-0.0.3",
         #"Null-0.0.3-DW": "Null-0.0.3-default-weights",
@@ -607,11 +620,15 @@ def main(
         #"Null-0.0.3-QAmber": "Null-0.0.3-QAmber",
         #"Null-0.0.3-NBAmber": "Null-0.0.3-NBAmber",
         #"Null-0.0.3-NAGL": "Null-0.0.3-NAGL",
-        "Null-QM": "Null-0.0.3-Pair",
+        #"Null-QM": "Null-0.0.3-Pair",
+        #"Null-AAQAA3-3": "Null-0.0.3-Pair-NMR-1E4-Umbrella-1E3-4-AAQAA3-1E3-3-OPC3",
+        #"Null-4-mer-AAQAA3": "Null-0.0.3-4-mer-AAQAA3-1E3-OPC3",
+        "Rosemary-3.0.0-alpha0": "Null-0.0.3-4-mer-AAQAA3-1E3-OPC3",
         #"Specific-0.0.2": "Specific-0.0.2",
         #"Specific-QM": "Specific-0.0.3",
         #"Specific-QM-Pair": "Specific-0.0.3-Pair",
-        "Specific-QM": "Specific-0.0.3-Sage-Pair",
+        #"Specific-QM": "Specific-0.0.3-Sage-Pair",
+        #"Specific-4-mer-AAQAA3-2": "Specific-0.0.3-Sage-4-mer-AAQAA3-1E3-2-OPC3",
     }
 
     qc_data = dict()
@@ -734,7 +751,7 @@ def main(
     # Plot QM-MM RMSEs for each validation target by force field
     _plot_rmse(
         rmse_values,
-        Path(output_dir, "torsiondrive-target-qm-mm-rmse.pdf"),
+        Path(output_dir, f"torsiondrive-target-qm-mm-rmse.{extension}"),
         figure_size,
         "Capped 3-mer backbone\nRMSE (kcal mol$^{-1}$)",
         rotate_x_labels=True,
@@ -742,7 +759,7 @@ def main(
 
     _plot_rmse(
         norm_rmse_values,
-        Path(output_dir, "torsiondrive-target-qm-mm-norm-rmse.pdf"),
+        Path(output_dir, f"torsiondrive-target-qm-mm-norm-rmse.{extension}"),
         figure_size,
         "Capped 3-mer backbone\nNormalized RMSE",
         rotate_x_labels=True,
@@ -752,16 +769,16 @@ def main(
     # intervals
     _plot_force_field_rmse(
         rmse_values,
-        Path(output_dir, "force-field-qm-mm-rmse.pdf"),
+        Path(output_dir, f"force-field-qm-mm-rmse.{extension}"),
         figure_size,
         "Capped 3-mer backbone\nRMSE (kcal mol$^{-1}$)",
         dark_background=dark_background,
-        #rotate_x_labels=True,
+        rotate_x_labels=True,
     )
 
     _plot_force_field_rmse(
         norm_rmse_values,
-        Path(output_dir, "force-field-qm-mm-norm-rmse.pdf"),
+        Path(output_dir, f"force-field-qm-mm-norm-rmse.{extension}"),
         figure_size,
         "Capped 3-mer backbone\nNormalized RMSE",
         dark_background=dark_background,
@@ -774,8 +791,8 @@ def main(
         seaborn.color_palette(
             [
                 seaborn.color_palette("tab10")[i]
-                for i in [7, 0, 1, 2, 4, 3, 9, 5, 6, 8]
-                # for i in [7, 0, 5, 1, 2, 9, 4, 8, 6, 3]
+                #for i in [7, 0, 1, 2, 4, 3, 9, 5, 6, 8]
+                for i in [7, 0, 9, 4, 6, 1, 8, 3, 2, 5]
             ]
         )
     )
