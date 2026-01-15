@@ -1,0 +1,36 @@
+Number of filtered core entries: 991
+Number of entries after deduplication: 991
+Number of entries after charge filter: 991
+Saved to training-datasets/protein-4-mer-training-dataset.json
+Coverage for Bonds
+Fitting b3 with count 991
+Fitting b87 with count 991
+Fitting b84 with count 991
+Fitting b10 with count 991
+Fitting b21 with count 991
+Fitting b9 with count 991
+Fitting b1 with count 991
+Fitting b22 with count 383
+Fitting b13a with count 25
+Fitting b7 with count 115
+Fitting b88 with count 203
+Fitting b14 with count 203
+Fitting b5 with count 13
+Fitting b2 with count 13
+Fitting b85 with count 13
+Skipping b8 with count 3
+Skipping b6 with count 3
+Skipping b13 with count 3
+Skipping b11 with count 3
+Coverage for Angles
+Fitting a21 with count 991
+Fitting a20 with count 991
+Fitting a10 with count 991
+Fitting a2 with count 991
+Fitting a1 with count 991
+Fitting a15 with count 383
+Fitting a28 with count 203
+Fitting a19 with count 90
+Fitting a11 with count 13
+Skipping a14 with count 3
+Skipping a22a with count 3

@@ -1,0 +1,15 @@
+Iter  0 Obj  8425.89 BB  869.13 SC 1082.48 4M 1081.18 SM 1053.47 Opt-Geo 4339.64 Reg    0.00 Hess 14 TD    0 Opt-Geo 197
+Iter  1 Obj  7821.76 BB  800.88 SC 1043.93 4M  826.17 SM  897.36 Opt-Geo 4248.80 Reg    4.61 Hess 11 TD    0 Opt-Geo 197
+Iter  2 Obj  7392.37 BB  735.67 SC  965.65 4M  705.56 SM  806.51 Opt-Geo 4155.13 Reg   23.85 Hess  9 TD    0 Opt-Geo 200
+Iter  3 Obj  7111.06 BB  699.28 SC  945.68 4M  680.21 SM  759.96 Opt-Geo 3998.85 Reg   27.07 Hess  7 TD    0 Opt-Geo 199
+Iter  4 Obj  6970.81 BB  674.15 SC  928.45 4M  652.78 SM  753.49 Opt-Geo 3934.81 Reg   27.13 Hess 10 TD    0 Opt-Geo 197
+Iter  5 Obj  6851.19 BB  649.47 SC  909.28 4M  630.52 SM  753.67 Opt-Geo 3880.97 Reg   27.28 Hess 10 TD    0 Opt-Geo 197
+Iter  6 Obj  6802.79 BB  639.23 SC  906.22 4M  623.88 SM  754.30 Opt-Geo 3851.80 Reg   27.36 Hess 18 TD    0 Opt-Geo 197
+Iter  7 Obj  6636.88 BB  630.50 SC  832.98 4M  608.84 SM  717.82 Opt-Geo 3817.81 Reg   28.93 Hess  9 TD    0 Opt-Geo 197
+Iter  8 Obj  6566.26 BB  623.05 SC  819.47 4M  582.37 SM  696.05 Opt-Geo 3817.18 Reg   28.14 Hess  7 TD    0 Opt-Geo 197
+Iter  9 Obj  6464.17 BB  606.23 SC  810.33 4M  590.17 SM  683.87 Opt-Geo 3745.12 Reg   28.44 Hess 11 TD    0 Opt-Geo 197
+Iter 10 Obj  6448.68 BB  595.25 SC  803.64 4M  581.13 SM  663.93 Opt-Geo 3776.10 Reg   28.64 Hess 10 TD    0 Opt-Geo 197
+Iter 11 Obj  6401.10 BB  592.04 SC  802.09 4M  594.49 SM  663.49 Opt-Geo 3720.35 Reg   28.64 Hess 12 TD    0 Opt-Geo 197
+Iter 12 Obj  6397.05 BB  589.19 SC  803.20 4M  588.43 SM  662.69 Opt-Geo 3724.89 Reg   28.64 Hess 18 TD    0 Opt-Geo 197
+Iter 13 Obj  6395.58 BB  589.09 SC  802.74 4M  597.23 SM  662.69 Opt-Geo 3715.19 Reg   28.64 Hess  9 TD    0 Opt-Geo 200
+Iter 14 Obj  6391.38 BB  589.08 SC  802.74 4M  597.20 SM  662.70 Opt-Geo 3711.03 Reg   28.64 Hess  7 TD    0 Opt-Geo 201

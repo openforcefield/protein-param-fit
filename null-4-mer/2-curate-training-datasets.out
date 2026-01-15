@@ -1,0 +1,4 @@
+Number of filtered core entries: 991
+Number of entries after deduplication: 991
+Number of entries after charge filter: 991
+Saved to training-datasets/protein-4-mer-training-dataset.json
